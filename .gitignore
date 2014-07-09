@@ -1,0 +1,25 @@
+# General
+*~
+*.lock
+*.swp
+*.out
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+*.DS_Store
+
+# Maven
+target/
+log/
+
+# Java
+*.class

@@ -1,0 +1,3 @@
+api.method="GET"
+api.path="/hello"
+api.endpoint.produces="application/xml"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder
+			location="classpath:application.properties, file:${user.home}/.drg-refapp/application.properties"
+			ignore-resource-not-found="true" ignore-unresolvable="true"/>
+
+	<import resource="classpath:drg-core.xml"/>
+	<import resource="classpath:drg-webcomp.xml"/>
+
+	<import resource="classpath:drg-interceptors/pre-condition.xml"/>
+	<import resource="classpath:drg-interceptors/request-mapping.xml"/>
+
+	<import resource="classpath:drg-processors/logging.xml"/>
+
+	<bean id="drgMessageConverterConfigurationClass" class="java.lang.Class" factory-method="forName">
+		<constructor-arg value="se.callistasoftware.drg.configuration.DrgMessageConverterConfigurationImpl"/>
+	</bean>
+
+	<bean id="echoProcessor" class="se.callistasoftware.drg.configuration.se.callistasoftware.drg.processors.EchoProcessor"/>
+
+	<mvc:interceptors>
+		<ref bean="preconditionInterceptor"/>
+		<ref bean="requestMappingInterceptor"/>
+	</mvc:interceptors>
+
+	<bean id="drgConfiguration" class="se.callistasoftware.drg.machine.DrgConfiguration">
+		<constructor-arg>
+			<list>
+				<ref bean="echoProcessor"/>
+				<ref bean="loggingProcessor"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="5 seconds">
+
+  <jmxConfigurator/>
+
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] - [%X{drg_correlationId}:%X{drg_apiName}:%X{drg_clientId}] %-5level %logger{36} %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="se.callistasoftware" level="DEBUG" />
+
+  <logger name="org.apigw" level="DEBUG" />
+
+  <logger name="org.springframework" level="INFO" />
+
+
+  <root level="warn">
+    <appender-ref ref="console" />
+  </root>
+
+</configuration>
