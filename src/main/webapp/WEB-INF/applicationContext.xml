@@ -17,17 +17,17 @@
 	<import resource="classpath:drg-processors/logging.xml"/>
 
 
-	<bean id="exampleProcessor" class="se.callistasoftware.drg.configuration.se.callistasoftware.drg.processors.ExampleProcessor">
+	<bean id="exampleProcessor" class="se.callistasoftware.drg.refapp.configuration.processors.ExampleProcessor">
 		<property name="configurationClass" ref="exampleProcessorConfigurationClass" />
 	</bean>
 
 
 	<bean id="drgMessageConverterConfigurationClass" class="java.lang.Class" factory-method="forName">
-		<constructor-arg value="se.callistasoftware.drg.configuration.DrgMessageConverterConfigurationImpl"/>
+		<constructor-arg value="se.callistasoftware.drg.refapp.configuration.DrgMessageConverterConfigurationImpl"/>
 	</bean>
 
 	<bean id="exampleProcessorConfigurationClass" class="java.lang.Class" factory-method="forName">
-		<constructor-arg value="se.callistasoftware.drg.configuration.se.callistasoftware.drg.processors.ExampleProcessorConfigurationImpl"/>
+		<constructor-arg value="se.callistasoftware.drg.refapp.configuration.processors.ExampleProcessorConfigurationImpl"/>
 	</bean>
 
 

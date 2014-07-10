@@ -1,4 +1,4 @@
-package se.callistasoftware.drg.configuration.se.callistasoftware.drg.processors;
+package se.callistasoftware.drg.refapp.configuration.processors;
 
 import se.callistasoftware.drg.domain.model.apiconfiguration.ApiConfiguration;
 import se.callistasoftware.drg.domain.model.apiconfiguration.DefaultApiConfiguration;

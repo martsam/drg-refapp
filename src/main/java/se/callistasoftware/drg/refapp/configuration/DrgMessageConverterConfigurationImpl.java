@@ -1,4 +1,4 @@
-package se.callistasoftware.drg.configuration;
+package se.callistasoftware.drg.refapp.configuration;
 
 import se.callistasoftware.drg.domain.model.apiconfiguration.ApiConfiguration;
 import se.callistasoftware.drg.domain.model.apiconfiguration.DefaultApiConfiguration;
