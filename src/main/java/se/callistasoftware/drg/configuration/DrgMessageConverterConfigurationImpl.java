@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class DrgMessageConverterConfigurationImpl extends DefaultApiConfiguration implements DrgMessageConverterConfiguration {
+
 	public DrgMessageConverterConfigurationImpl(ApiConfiguration apiConfiguration) {
 		super(apiConfiguration);
 	}

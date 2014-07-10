@@ -16,11 +16,20 @@
 
 	<import resource="classpath:drg-processors/logging.xml"/>
 
+
+	<bean id="exampleProcessor" class="se.callistasoftware.drg.configuration.se.callistasoftware.drg.processors.ExampleProcessor">
+		<property name="configurationClass" ref="exampleProcessorConfigurationClass" />
+	</bean>
+
+
 	<bean id="drgMessageConverterConfigurationClass" class="java.lang.Class" factory-method="forName">
 		<constructor-arg value="se.callistasoftware.drg.configuration.DrgMessageConverterConfigurationImpl"/>
 	</bean>
 
-	<bean id="echoProcessor" class="se.callistasoftware.drg.configuration.se.callistasoftware.drg.processors.EchoProcessor"/>
+	<bean id="exampleProcessorConfigurationClass" class="java.lang.Class" factory-method="forName">
+		<constructor-arg value="se.callistasoftware.drg.configuration.se.callistasoftware.drg.processors.ExampleProcessorConfigurationImpl"/>
+	</bean>
+
 
 	<mvc:interceptors>
 		<ref bean="preconditionInterceptor"/>
@@ -30,7 +39,7 @@
 	<bean id="drgConfiguration" class="se.callistasoftware.drg.machine.DrgConfiguration">
 		<constructor-arg>
 			<list>
-				<ref bean="echoProcessor"/>
+				<ref bean="exampleProcessor"/>
 				<ref bean="loggingProcessor"/>
 			</list>
 		</constructor-arg>
