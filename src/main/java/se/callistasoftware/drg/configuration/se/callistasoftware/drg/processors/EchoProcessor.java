@@ -27,7 +27,7 @@ public class EchoProcessor implements Processor {
 		StringBuilder sb = new StringBuilder()
 				.append("<message>")
 					.append("<method>").append(method).append("</method>")
-					.append("<path>").append(path).append("</path")
+					.append("<path>").append(path).append("</path>")
 					.append("<headers>");
 		for (String header : headers.keySet()) {
 			sb
