@@ -5,9 +5,9 @@ import se.callistasoftware.drg.domain.model.apiconfiguration.DefaultApiConfigura
 import se.callistasoftware.drg.util.MapUtil;
 import se.callistasoftware.drg.web.DrgMessageConverterConfiguration;
 
+import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
 
 public class DrgMessageConverterConfigurationImpl extends DefaultApiConfiguration implements DrgMessageConverterConfiguration {
 
@@ -16,8 +16,10 @@ public class DrgMessageConverterConfigurationImpl extends DefaultApiConfiguratio
 	}
 
 	@Override
-	public Set<String> getProducibleMimeTypes() {
+	public List<String> getProducibleMimeTypes() {
 		final String produces = MapUtil.get(this.asMap(), "api.endpoint.produces");
-		return new HashSet<String>(){{add(produces);}};
+		List result = new ArrayList();
+		result.add(produces);
+		return result;
 	}
 }

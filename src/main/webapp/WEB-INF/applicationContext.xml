@@ -11,9 +11,6 @@
 	<import resource="classpath:drg-core.xml"/>
 	<import resource="classpath:drg-webcomp.xml"/>
 
-	<import resource="classpath:drg-interceptors/pre-condition.xml"/>
-	<import resource="classpath:drg-interceptors/request-mapping.xml"/>
-
 	<import resource="classpath:drg-processors/logging.xml"/>
 
 
@@ -31,10 +28,6 @@
 	</bean>
 
 
-	<mvc:interceptors>
-		<ref bean="preconditionInterceptor"/>
-		<ref bean="requestMappingInterceptor"/>
-	</mvc:interceptors>
 
 	<bean id="drgConfiguration" class="se.callistasoftware.drg.machine.DrgConfiguration">
 		<constructor-arg>
